@@ -1,10 +1,11 @@
 import ProductItem from "./ProductItem";
+import classes from './ProductList.module.css';
 
 const ProductList = (props) => {
     const { products } = props;
 
     return (
-        <ul>
+        <ul className={classes.list}>
             {products.map((product) => (
             <ProductItem 
                 key={product.id}

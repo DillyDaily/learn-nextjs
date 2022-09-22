@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import classes from './ProductItem.module.css';
 
 const ProductItem = (props) => {
     const { name, description, image, price, date, location, id, category } = props;
@@ -12,7 +13,7 @@ const ProductItem = (props) => {
     const formattedAddress = location.replace(', ', '\n');
     const productLink = `/products/${id}`
 
-    return <li>
+    return <li className={classes.product}>
         <img src={'/' + image} alt={name} />
         <div>
             <div>
