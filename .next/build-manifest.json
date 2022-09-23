@@ -34,11 +34,6 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/category/[products].js"
     ],
-    "/category/[products]/[product]": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/category/[products]/[product].js"
-    ],
     "/category/[products]/[product]/[productId]": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
