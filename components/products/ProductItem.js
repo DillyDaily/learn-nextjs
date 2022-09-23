@@ -1,4 +1,7 @@
-import Link from 'next/link';
+import Button from '../ui/Button';
+import DateIcon from '../icons/DateIcon';
+import AddressIcon from '../icons/AddressIcon';
+import ArrowRight from '../icons/ArrowRightIcon';
 import classes from './ProductItem.module.css';
 
 const ProductItem = (props) => {
@@ -11,26 +14,31 @@ const ProductItem = (props) => {
     });
 
     const formattedAddress = location.replace(', ', '\n');
-    const productLink = `/products/${id}`
+    const productLink = `category/products/product/${id}`
 
     return <li className={classes.product}>
         <img src={'/' + image} alt={name} />
-        <div>
-            <div>
+        <div className={classes.content}>
+            <div className={classes.summary}>
                 <h2>{name}</h2>
                 <h4>{price}</h4>
                 <div>
                     <p>{description}</p>
                 </div>
-                <div>
+                <div className={classes.date}>
+                    <DateIcon />
                     <time>{readableDate}</time>
                 </div>
-                <div>
+                <div className={classes.address}>
+                    <AddressIcon />
                     <address>{formattedAddress}</address>
                 </div>
             </div>
-            <div>
-                <Link href = {productLink}>Go to Product</Link>
+            <div className={classes.actions}>
+                <Button link={productLink}>
+                    <span> Quickshop </span>
+                    <span className={classes.icon}> <ArrowRight /></span>
+                </Button>
             </div>
         </div>
     </li>;
